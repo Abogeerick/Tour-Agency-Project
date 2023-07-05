@@ -25,13 +25,27 @@ body {
 /* About section */
 #about {
     margin-bottom: 40px;
-}
-
-#about p {
+    text-align: center; /* Center-align the content */
+  }
+  
+  #about p {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
-}
+    background-color: #f7f7f7; /* Add a light background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    line-height: 1.6; /* Increase the line height for better readability */
+  }
+  
+  #about p:first-child {
+    margin-top: 0; /* Remove top margin from the first paragraph */
+  }
+  
+  #about p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+  }
+  
+  
 
 /* Top Destinations section */
 #top-destinations {
@@ -61,10 +75,12 @@ body {
 
 /* Explore section */
 #explore img {
-    width: 100%;
+    max-width: 50%; /* Limit the image width to its container */
     height: auto;
     margin-bottom: 20px;
-}
+    height: auto;
+  }
+  
 
 /* Popular Tours section */
 #popular-tours {
