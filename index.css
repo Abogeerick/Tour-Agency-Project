@@ -1,0 +1,116 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background-color: aqua;
+    color: blue;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+/* About section */
+#about {
+    margin-bottom: 40px;
+}
+
+#about p {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Top Destinations section */
+#top-destinations {
+    margin-bottom: 40px;
+}
+
+.destination {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.destination img {
+    width: 400px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.destination-details {
+    flex-grow: 1;
+}
+
+.destination-details p {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Explore section */
+#explore img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Popular Tours section */
+#popular-tours {
+    margin-bottom: 40px;
+}
+
+.tour {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tour img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.tour-details {
+    flex-grow: 1;
+}
+
+.tour-details p {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .destination,
+    .tour {
+        flex-direction: column;
+    }
+
+    .destination img,
+    .tour img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
