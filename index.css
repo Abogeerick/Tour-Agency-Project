@@ -225,3 +225,27 @@ button {
         margin-bottom: 20px;
     }
 }
+
+
+#shortlisted-section {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+#shortlisted-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#shortlisted-section ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#shortlisted-section li {
+  margin-bottom: 5px;
+}
+
