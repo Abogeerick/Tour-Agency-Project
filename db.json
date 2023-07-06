@@ -1,0 +1,40 @@
+{
+    "packages": [
+      {
+        "id": "1",
+        "title": "Lamu Island",
+        "duration": "7 days",
+        "price": "$1500"
+      },
+      {
+        "id": "2",
+        "title": "Diani Beach",
+        "duration": "10 days",
+        "price": "$2000"
+      },
+      {
+        "id": "3",
+        "title": "Amboseli National Park",
+        "duration": "14 days",
+        "price": "$250"
+      },
+      {
+        "id": "4",
+        "title": "Watamu Coastal Region",
+        "duration": "5 days"
+      },
+      {
+        "id": "5",
+        "title": "Maasai Mara Safari",
+        "duration": "12 days",
+        "price": "$300"
+      },
+      {
+        "id": "6",
+        "title": "Mount Kenya Trek",
+        "duration": "8 days",
+        "price": "$2800"
+      }
+    ]
+  }
+  
