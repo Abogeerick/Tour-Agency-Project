@@ -258,7 +258,7 @@ button {
 }
 
 .navbar {
-  background-color: #333;
+  background-color: hwb(340 11% 45%);
   padding: 10px;
 }
 
