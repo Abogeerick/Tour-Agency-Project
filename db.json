@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Lamu Island",
       "duration": "7 days",
-      "price": "$1500",
+      "price": "$150",
       "description": "Experience the tranquil beauty of Lamu Island with its pristine beaches and rich Swahili culture.",
       "highlights": [
         "Explore the narrow streets of Lamu Old Town",
@@ -28,7 +28,7 @@
       "id": "2",
       "title": "Diani Beach",
       "duration": "10 days",
-      "price": "$2000",
+      "price": "$200",
       "description": "Indulge in the tropical paradise of Diani Beach with its pristine white sands and turquoise waters.",
       "highlights": [
         "Snorkeling and diving in the vibrant coral reefs",
@@ -52,7 +52,7 @@
       "id": "3",
       "title": "Amboseli National Park",
       "duration": "14 days",
-      "price": "$2500",
+      "price": "$250",
       "description": "Embark on an unforgettable safari adventure in Amboseli National Park, home to iconic wildlife and breathtaking landscapes.",
       "highlights": [
         "Game drives to spot elephants, lions, and other wildlife",
@@ -100,7 +100,7 @@
       "id": "5",
       "title": "Maasai Mara Safari",
       "duration": "12 days",
-      "price": "$3500",
+      "price": "$350",
       "description": "Embark on an extraordinary safari experience in the world-famous Maasai Mara National Reserve, renowned for its spectacular wildlife sightings.",
       "highlights": [
         "Unforgettable game drives in search of the Big Five",
@@ -124,7 +124,7 @@
       "id": "6",
       "title": "Mount Kenya Trek",
       "duration": "8 days",
-      "price": "$4000",
+      "price": "$400",
       "description": "Embark on a thrilling adventure to conquer Mount Kenya, Africa's second-highest peak, and explore its diverse alpine landscapes.",
       "highlights": [
         "Challenging trekking routes and breathtaking views",
