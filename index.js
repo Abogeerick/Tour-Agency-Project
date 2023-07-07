@@ -21,9 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
   function showPackages(id, packageId, button) {
     fetch(`http://localhost:3000/packages/${id}`)
       .then(response => {
-        if (!response.ok) {
-          throw new Error("Network response was not OK");
-        }
         return response.json();
       })
       .then(showPackages => {
