@@ -37,8 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const vacationIncluded = createAndStyleElement("p", `Included: ${showPackages.included.join(", ")}`);
         const vacationDates = createAndStyleElement("p", `Departure Dates: ${showPackages.departureDates.join(", ")}`);
 
-        const shortlistedSection = document.getElementById("shortlisted-section");
-
+       
         const shortlistButton = createAndStyleElement("button", "Shortlist");
         shortlistButton.style.background = "purple";  
         shortlistButton.addEventListener("click", function() {
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function displayShortlistedPackages() {
-    const shortlistedSection = document.getElementById("shortlisted-section");
+    let shortlistedSection = document.getElementById("shortlisted-section");
     shortlistedSection.innerHTML = "";
 
     if (shortlistedPackages.length > 0) {
