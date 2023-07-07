@@ -16,24 +16,32 @@ body {
 
 /* Header */
 .header {
-    background-color: rgba(0, 0, 0, 0.247);
-    color: white;
-    padding: 20px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header h1 {
-    margin: 0;
-    color: white;
+  margin: 0;
 }
-#contact-btn{
-    width: 25%;
-    height: 15%;
-    margin: auto;
-    display:block;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 25px;
-    border-radius: 2cm;
+
+.header img {
+  height: 40px;
+}
+
+.header p {
+  margin: 10px 0;
+}
+
+#contact-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 /* About section */

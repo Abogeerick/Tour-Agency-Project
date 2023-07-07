@@ -107,3 +107,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const signupForm = document.getElementById("signup-form");
+  const emailInput = document.getElementById("email-input");
+
+  signupForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Get the entered email value
+    const email = emailInput.value;
+
+    // Perform further actions with the email value, such as sending it to a server
+
+    // Reset the input field
+    emailInput.value = "";
+  });
+});
