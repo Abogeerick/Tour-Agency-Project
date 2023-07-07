@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     { id: 6, buttonId: "sixth-btn", packageId: "kenya-package" }
   ];
 
-  // Array to store shortlisted package IDs
   let shortlistedPackages = [];
 
   destinations.forEach((destination) => {
@@ -21,88 +20,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function showPackages(id, packageId, button) {
     fetch(`http://localhost:3000/packages/${id}`)
-      .then(function(response) {
+      .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not OK");
         }
         return response.json();
       })
-      .then(function(showPackages) {
+      .then(showPackages => {
         let nameList = document.getElementById(packageId);
 
-        const nameHeading = document.createElement("h3");
-        nameHeading.textContent = `Title: ${showPackages.title}`;
-        nameHeading.style.fontWeight = "bold";
-        nameHeading.style.marginBottom = "10px";
-        nameHeading.style.background = "white";
-        nameHeading.style.color = "black";
-        nameHeading.style.padding = "10px";
-
-        const durationTime = document.createElement("p");
-        durationTime.textContent = `Duration: ${showPackages.duration}`;
-        durationTime.style.marginBottom = "5px";
-        durationTime.style.background = "white";
-        durationTime.style.color = "black";
-        durationTime.style.padding = "5px";
-
-        const vacationPrice = document.createElement("p");
-        vacationPrice.textContent = `Price: ${showPackages.price}`;
-        vacationPrice.style.marginBottom = "5px";
-        vacationPrice.style.background = "white";
-        vacationPrice.style.color = "black";
-        vacationPrice.style.padding = "5px";
-
-        const vacationDescription = document.createElement("p");
-        vacationDescription.textContent = `Description: ${showPackages.description}`;
-        vacationDescription.style.marginBottom = "5px";
-        vacationDescription.style.background = "white";
-        vacationDescription.style.color = "black";
-        vacationDescription.style.padding = "5px";
-
-        const vacationHighlights = document.createElement("p");
-        vacationHighlights.textContent = `Highlights: ${showPackages.highlights.join(", ")}`;
-        vacationHighlights.style.marginBottom = "5px";
-        vacationHighlights.style.background = "white";
-        vacationHighlights.style.color = "black";
-        vacationHighlights.style.padding = "5px";
-
-        const vacationIncluded = document.createElement("p");
-        vacationIncluded.textContent = `Included: ${showPackages.included.join(", ")}`;
-        vacationIncluded.style.marginBottom = "5px";
-        vacationIncluded.style.background = "white";
-        vacationIncluded.style.color = "black";
-        vacationIncluded.style.padding = "5px";
-
-        const vacationDates = document.createElement("p");
-        vacationDates.textContent = `Departure Dates: ${showPackages.departureDates.join(", ")}`;
-        vacationDates.style.marginBottom = "5px";
-        vacationDates.style.background = "white";
-        vacationDates.style.color = "black";
-        vacationDates.style.padding = "5px";
+        const nameHeading = createAndStyleElement("h3", `Title: ${showPackages.title}`);
+        const durationTime = createAndStyleElement("p", `Duration: ${showPackages.duration}`);
+        const vacationPrice = createAndStyleElement("p", `Price: ${showPackages.price}`);
+        const vacationDescription = createAndStyleElement("p", `Description: ${showPackages.description}`);
+        const vacationHighlights = createAndStyleElement("p", `Highlights: ${showPackages.highlights.join(", ")}`);
+        const vacationIncluded = createAndStyleElement("p", `Included: ${showPackages.included.join(", ")}`);
+        const vacationDates = createAndStyleElement("p", `Departure Dates: ${showPackages.departureDates.join(", ")}`);
 
         const shortlistedSection = document.getElementById("shortlisted-section");
 
-        // Create a shortlist button for each package
-        const shortlistButton = document.createElement("button");
-        shortlistButton.textContent = "Shortlist";
-        shortlistButton.style.background = "blue";
-        shortlistButton.style.color = "white";
-        shortlistButton.style.padding = "5px";
-        shortlistButton.style.border = "none";
-        shortlistButton.style.cursor = "pointer";
-
-        // Event listener for the shortlist button
+        const shortlistButton = createAndStyleElement("button", "Shortlist");
+        shortlistButton.style.background = "purple";  
         shortlistButton.addEventListener("click", function() {
-          // Check if the package is already in the shortlist
           const packageIndex = shortlistedPackages.indexOf(showPackages.id);
           if (packageIndex === -1) {
-            // Add the package ID to the shortlist
             shortlistedPackages.push(showPackages.id);
             shortlistButton.textContent = "Remove from Shortlist";
             shortlistButton.style.background = "red";
             displayShortlistedPackages();
           } else {
-            // Remove the package ID from the shortlist
             shortlistedPackages.splice(packageIndex, 1);
             shortlistButton.textContent = "Shortlist";
             shortlistButton.style.background = "blue";
@@ -110,28 +56,31 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
 
-        // Append all the elements to the nameList container
-        nameList.appendChild(nameHeading);
-        nameList.appendChild(durationTime);
-        nameList.appendChild(vacationPrice);
-        nameList.appendChild(vacationDescription);
-        nameList.appendChild(vacationHighlights);
-        nameList.appendChild(vacationIncluded);
-        nameList.appendChild(vacationDates);
-        nameList.appendChild(shortlistButton);
+        appendElements(nameList, [nameHeading, durationTime, vacationPrice, vacationDescription, vacationHighlights, vacationIncluded, vacationDates, shortlistButton]);
 
         button.disabled = true;
       })
-      .catch(function(error) {
+      .catch(error => {
         console.error("Error:", error);
-        // You can handle the error here, such as displaying an error message
       });
   }
 
-  // Function to display the shortlisted packages
+  function createAndStyleElement(tagName, textContent) {
+    const element = document.createElement(tagName);
+    element.textContent = textContent;
+    element.style = "margin-bottom: 5px; background: white; color: black; padding: 5px;";
+    return element;
+  }
+
+  function appendElements(parentElement, elements) {
+    elements.forEach(element => {
+      parentElement.appendChild(element);
+    });
+  }
+
   function displayShortlistedPackages() {
     const shortlistedSection = document.getElementById("shortlisted-section");
-    shortlistedSection.innerHTML = ""; // Clear the section
+    shortlistedSection.innerHTML = "";
 
     if (shortlistedPackages.length > 0) {
       const heading = document.createElement("h3");
@@ -140,32 +89,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const list = document.createElement("ul");
 
-      // Fetch the package data for each shortlisted package
-      const promises = shortlistedPackages.map((packageId) => {
+      const promises = shortlistedPackages.map(packageId => {
         return fetch(`http://localhost:3000/packages/${packageId}`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not OK");
-            }
+          .then(response => {
             return response.json();
           })
-          .then((packageData) => {
+          .then(packageData => {
             const listItem = document.createElement("li");
             listItem.textContent = `Title: ${packageData.title}`;
             list.appendChild(listItem);
           });
       });
 
-      // Wait for all the promises to resolve
       Promise.all(promises)
         .then(() => {
           shortlistedSection.appendChild(list);
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error:", error);
         });
     }
   }
-
-  // Add the DOMContentLoaded event listener
 });
