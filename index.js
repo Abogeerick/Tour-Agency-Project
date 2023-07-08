@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function showPackages(id, packageId, button) {
-    fetch(`http://localhost:3000/packages/${id}`)
+    fetch(`https://travelling-tours.onrender.com/packages/${id}`)
       .then(response => {
         return response.json();
       })
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const list = document.createElement("ul");
 
       const promises = shortlistedPackages.map(packageId => {
-        return fetch(`http://localhost:3000/packages/${packageId}`)
+        return fetch(`https://travelling-tours.onrender.com/packages/${packageId}`)
           .then(response => {
             return response.json();
           })
