@@ -306,3 +306,63 @@ button {
 }
 
 
+/* index.css */
+
+/* Styling for the booking section */
+#booking {
+  background-color: #23bd5e;
+  padding: 40px;
+  margin-top: 40px;
+  text-align: center;
+  border-radius: 1px;
+}
+
+#booking h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#booking-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#booking-form div {
+  margin-bottom: 20px;
+}
+
+#booking-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#booking-form input[type="text"],
+#booking-form input[type="date"],
+#booking-form input[type="number"] {
+  width: 200px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#booking-form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#booking-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+
+
